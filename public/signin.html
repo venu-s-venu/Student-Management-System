@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <div class="top">
+            <p>Student Management System</p>
+        </div>
+    <div class="index">
+            <div class="signin">
+                <h2>Sign In</h2>
+                <form>
+                <button type="button" class="role-btn active">Student</button>
+                <button type="button" class="role-btn">Admin</button>
+                <input type="text" id="student-id" name="student-id" placeholder="Student ID" >
+                <br>
+                <input type="password" id="password" name="password" placeholder="Password" >
+                <br>
+                <button type="submit">SignIn</button>
+                <p>Forget Password? <a href="#">Forget Password</a></p>
+                <p>create new account <a href="signup.html">SignUp</a></p>
+                </form>
+            </div>
+        </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: poppins, sans-serif;
+        }
+        body{
+            background:#90e0ef;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .top{
+            width: 100%;
+            height: 70px;
+            background: #219ebc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            margin-bottom:10px  ;
+        }
+        .index{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+         .right-half{
+            margin:auto;
+            display: flex;
+            flex-direction: column;
+            color: #fff;  
+        }
+        h2{
+            margin-bottom: 20px;
+            color:#219ebc;
+            font-size: 30px;
+            text-align: center;
+        }
+        .signin{
+            max-width: 25%;
+            background: #fff;
+            display: block;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: solid 1px #ccc;
+             box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .role-btn.active{
+            background: #219ebc;
+            color:#fff;
+        }
+         .role-btn{
+            background: #fff;
+            margin: 10px 0;
+            width: 48%;
+            color: #219ebc;
+            border: solid 1px #219ebc;
+            cursor: pointer;
+            font-size: 16px;
+        }
+       
+        input,button{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button{
+            background: #219ebc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .signin p{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .signin p{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        a{
+            text-decoration: none;
+            color: #219ebc;
+        }
+    </style>
+    <script>
+        const buttons = document.querySelectorAll('.role-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const placeholderText = button.textContent.trim() === 'Student' ? 'Student ID' : 'Admin ID';
+                const input = document.getElementById('student-id');
+                if(input) input.placeholder = placeholderText;
+            });
+        });
+       
+    </script>
+</body>
+</html>
