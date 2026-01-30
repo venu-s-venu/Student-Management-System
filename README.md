@@ -1,6 +1,6 @@
 .
 
-🎓 Student Management System
+🎓 Student Management System 
 📌 Overview
 
 The Student Management System (SMS) is a web-based application designed to manage student data efficiently.
